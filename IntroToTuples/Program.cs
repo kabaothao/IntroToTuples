@@ -1,4 +1,4 @@
-﻿//(string message, bool valid) = ValidateAddress(address: "123 sesame st"); //now this is called decontruct our tuples to separate parts.
+﻿//(string message, bool valid) = ValidateAddress(address: "123 sesame st"); //now this is called decontructor which deconstruct  our tuples to separate parts.
 
 //if (result.isValid)
 //{
@@ -9,7 +9,7 @@
 //    Console.WriteLine(value: "That is an invalid address.");
 //}
 
-(string address, _) = ValidateAddress(address: "123 sesame st");
+(string address, _) = ValidateAddress(address: "123 sesame st"); //maybe we just want the valid address and we don't want to know if it is valid or invalid address. we just want it formatted properly if we can.
 
 (string address, bool isinvalid) ValidateAddress(string address)
 
