@@ -1,35 +1,28 @@
-﻿using System;
+﻿//(string message, bool valid) = ValidateAddress(address: "123 sesame st"); //now this is called decontruct our tuples to separate parts.
 
-namespace IntroToTuples
+//if (result.isValid)
+//{
+//    Console.WriteLine(value: $"Your validated address is {result.address}");
+//}
+//else
+//{
+//    Console.WriteLine(value: "That is an invalid address.");
+//}
+
+(string address, _) = ValidateAddress(address: "123 sesame st");
+
+(string address, bool isinvalid) ValidateAddress(string address)
+
 {
-    public class Program
-    {
-        static void Main(string[] args)
+    if (address.Equals(value: "123 sesame st"))
         {
-            var result = ValidateAddress(address: "123 sesame st");
-            if (result.isValid)
-            {
-                Console.WriteLine(value: $"Your validated address is {result.address}");
-            }
-            else
-            {
-                Console.WriteLine(value: "That is an invalid address.");
-            }
+            return ("123 Sesame Street", true);
         }
-        (string address, bool isValid) ValidateAddress(string address)
+        else
         {
-            if(address.Equals(value: "123 sesame st"))
-                {
-                    return ("123 Sesame Street", true);   
-                }
-                else
-                {
-                    return (address, false);
-                }
+            return (address, false);
         }
-    }
 }
-
 
 
 /*
@@ -38,5 +31,7 @@ namespace IntroToTuples
 For example line 28
 
 (string address, bool isValid)
+
+tuples are really helpful to use for returning multiple parameters from a method that's the big deal about tuples
 
  */
