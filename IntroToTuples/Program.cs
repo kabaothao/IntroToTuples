@@ -1,39 +1,31 @@
-﻿// See https://aka.ms/new-console-template for more information
-//Console.WriteLine("Hello, World!");
+﻿using System;
 
-
-
-using System;
-
-namespace MyApp // Note: actual namespace depends on the project name.
+namespace IntroToTuples
 {
     public class Program
     {
         static void Main(string[] args)
         {
-            if (true)
+            var result = ValidateAddress(address: "123 sesame st");
+            if (result.isValid)
             {
-                Console.WriteLine(value: "Your validated address is {}");
+                Console.WriteLine(value: $"Your validated address is {result.address}");
             }
             else
             {
                 Console.WriteLine(value: "That is an invalid address.");
             }
-
-
         }
-
-        void ValidateAddress(string address)
+        (string address, bool isValid) ValidateAddress(string address)
         {
-            if(address.Equals((value: "123 sesame st"))
+            if(address.Equals(value: "123 sesame st"))
                 {
-                    //return "123 Sesame Street"
+                    return ("123 Sesame Street", true);   
                 }
                 else
                 {
-                  //return false
+                    return (address, false);
                 }
-
         }
     }
 }
@@ -42,5 +34,9 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
 /*
  Tuples has a sequence of elements of different data types. It was introduced to return an instance of the Tuple<T> with no need to specify the type of each element separately.
+
+For example line 28
+
+(string address, bool isValid)
 
  */
